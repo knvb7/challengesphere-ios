@@ -1,6 +1,6 @@
 # ChallengeSphere App Store submission packet
 
-Status: metadata/reviewer copy, Apple/RevenueCat/backend configuration, Paid Apps/tax/banking, production signing, and build `1.0.12 (6)` are complete. The TestFlight upload is queued; DSA review, declarations, screenshots, manual device verification, and final App Review submission remain open.
+Status: metadata/reviewer copy, Apple/RevenueCat/backend configuration, Paid Apps/tax/banking, production signing, and the build `1.0.12 (6)` upload are complete. App Store Connect is processing build 6; DSA review, declarations, screenshots, manual device verification, and final App Review submission remain open.
 
 ## App record
 
