@@ -1,6 +1,6 @@
 # ChallengeSphere App Store submission packet
 
-Status: metadata and reviewer copy prepared; Apple account identifiers and review contact are recorded. Screenshots, signed build, account configuration, and submission remain open.
+Status: metadata/reviewer copy and Apple/RevenueCat/backend configuration are complete. Agreements, declarations, screenshots, signed/TestFlight build, manual device verification, and submission remain open.
 
 ## App record
 
@@ -209,13 +209,13 @@ Accept the rating Apple calculates. If ChallengeSphere's Terms require a higher 
 
 ## Submission gate
 
-- [ ] Apple Developer capability, Sign in with Apple key, server notification URL, and regenerated distribution profile are active.
-- [ ] Backend migrations/configuration and canonical website are deployed.
-- [ ] RevenueCat iOS app, products, entitlement, offering, webhook, and production keys are active.
+- [x] Apple Developer capability, Sign in with Apple key, server notification URL, and regenerated distribution profile are active.
+- [x] Backend migrations/configuration and canonical website are deployed.
+- [x] RevenueCat iOS app, products, entitlement, offering, webhook, and production keys are active; signed test delivery returned HTTP 200.
 - [x] `production-ios-no-ads` is selected; the app and App Privacy worksheet specify no iOS ads, no ATT request, and no tracking. The signed archive still requires final inspection.
 - [ ] Fresh Apple reviewer accounts receive seeded public/official content.
 - [ ] Six iPhone and six iPad screenshots are captured from the final build.
-- [ ] Contact placeholders and Apple ID are replaced.
+- [x] App Review contact and Apple ID are recorded.
 - [ ] Signed archive passes validation and its entitlements/privacy report are inspected.
 - [ ] Physical iPhone and iPad TestFlight flows are manually verified.
 - [ ] Version, first subscriptions, metadata, privacy answers, and review notes are attached to one submission.
