@@ -1,6 +1,6 @@
 # ChallengeSphere App Store submission packet
 
-Status: metadata/reviewer copy and Apple/RevenueCat/backend configuration are complete. Agreements, declarations, screenshots, signed/TestFlight build, manual device verification, and submission remain open.
+Status: metadata/reviewer copy, Apple/RevenueCat/backend configuration, production signing, and build `1.0.12 (6)` are complete. The TestFlight upload is queued; Paid Apps/DSA processing, declarations, screenshots, manual device verification, and final App Review submission remain open.
 
 ## App record
 
@@ -212,11 +212,11 @@ Accept the rating Apple calculates. If ChallengeSphere's Terms require a higher 
 - [x] Apple Developer capability, Sign in with Apple key, server notification URL, and regenerated distribution profile are active.
 - [x] Backend migrations/configuration and canonical website are deployed.
 - [x] RevenueCat iOS app, products, entitlement, offering, webhook, and production keys are active; signed test delivery returned HTTP 200.
-- [x] `production-ios-no-ads` is selected; the app and App Privacy worksheet specify no iOS ads, no ATT request, and no tracking. The signed archive still requires final inspection.
+- [x] `production-ios-no-ads` is selected; signed build `70970df8…` contains no native Google Ads, Google Sign-In, UMP, or ATT SDK or usage key and matches the no-tracking privacy decision.
 - [ ] Fresh Apple reviewer accounts receive seeded public/official content.
 - [ ] Six iPhone and six iPad screenshots are captured from the final build.
 - [x] App Review contact and Apple ID are recorded.
-- [ ] Signed archive passes validation and its entitlements/privacy report are inspected.
+- [x] Signed archive passes validation and its entitlements/privacy report are inspected. Build `1.0.12 (6)` has production push, Sign in with Apple, associated domains, valid signing, and SHA-256 `99b8934dc07950d17d71477b4952e8d72f06c5c25888f1a7b74cffd2901ca45b`.
 - [ ] Physical iPhone and iPad TestFlight flows are manually verified.
 - [ ] Version, first subscriptions, metadata, privacy answers, and review notes are attached to one submission.
 

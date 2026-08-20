@@ -1,6 +1,6 @@
 # ChallengeSphere iOS App Privacy worksheet
 
-Status: first-party inventory complete; `production-ios-no-ads` was selected on 20 August 2026. Final publishing is blocked by reconciling the signed production archive.
+Status: first-party inventory and signed-archive reconciliation are complete for EAS build `70970df8…`; App Store Connect answers still need to be entered and published.
 
 Scope: iOS/iPadOS `1.0.12` build `6`, bundle ID `com.ironside.challengesphere`.
 
@@ -12,7 +12,7 @@ The submitted build must use `production-ios-no-ads`. The checked-in native proj
 
 The separate `production-ios-ads` profile is retained only for a possible future release. It must not be used for this submission because Google's privacy manifest declares a linked Device ID used for tracking, plus advertising data, product interaction, coarse location, and diagnostics.
 
-Do not publish App Privacy answers until the signed `production-ios-no-ads` archive confirms that no advertising or tracking SDK is embedded.
+Signed build `1.0.12 (6)` confirms that no native advertising or tracking SDK is embedded and that all bundled privacy manifests either declare tracking `false` or omit tracking entirely, with no tracking domains.
 
 ## First-party collection
 
@@ -89,10 +89,10 @@ These routes exist in the canonical website configuration but must be deployed a
 ## Final archive reconciliation
 
 - [x] Record `production-ios-no-ads` as the required submitted archive profile.
-- [ ] Build the signed distribution archive with production dependencies and configuration.
+- [x] Build the signed distribution archive with production dependencies and configuration (`70970df8…`, SHA-256 `99b8934dc07950d17d71477b4952e8d72f06c5c25888f1a7b74cffd2901ca45b`).
 - [ ] In Xcode Organizer, generate the archive privacy report.
-- [ ] Confirm the report contains the first-party entries in this worksheet.
-- [ ] Confirm every embedded SDK privacy manifest appears and no unexpected tracking domain or data type is present.
+- [x] Confirm the signed app's first-party manifest contains the entries in this worksheet.
+- [x] Inventory every embedded SDK privacy manifest; none declares tracking `true` or a tracking domain, and no Google Ads/UMP/ATT manifest or framework is present.
 - [ ] Enter the same data types, linked status, tracking status, and purposes in App Store Connect.
 - [ ] Confirm the public Privacy Policy describes the same production behavior.
 - [ ] Publish App Privacy answers only after the production archive is final.
