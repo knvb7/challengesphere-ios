@@ -1,0 +1,464 @@
+[
+  {
+    "chunk_num": 1,
+    "total_chunks": 35,
+    "files": [
+      "app/+not-found.tsx",
+      "app/_layout.tsx",
+      "app/about.tsx",
+      "app/avatar-viewer.tsx",
+      "app/challenge-created.tsx",
+      "app/challenge-details.tsx",
+      "app/challenge-invitation.tsx",
+      "app/challenge-submissions.tsx",
+      "app/edit-challenge.tsx",
+      "app/edit-profile.tsx",
+      "app/followers.tsx",
+      "app/global-challenge-details.tsx",
+      "app/help-center.tsx",
+      "app/invitations.tsx",
+      "app/leaderboard.tsx",
+      "app/login.tsx",
+      "app/notifications.tsx",
+      "app/photo-details.tsx",
+      "app/privacy-security.tsx",
+      "app/select-users-to-invite.tsx",
+      "app/settings.tsx",
+      "app/signup.tsx"
+    ],
+    "types": [
+      "code"
+    ]
+  },
+  {
+    "chunk_num": 2,
+    "total_chunks": 35,
+    "files": [
+      "app/user-challenges.tsx",
+      "app/user-followers.tsx",
+      "app/user-profile.tsx"
+    ],
+    "types": [
+      "code"
+    ]
+  },
+  {
+    "chunk_num": 3,
+    "total_chunks": 35,
+    "files": [
+      "components/common/ChallengeCard.tsx",
+      "components/common/ChallengePhotoCarousel.tsx",
+      "components/common/ChallengeSummary.tsx",
+      "components/common/CircularPhoto.tsx",
+      "components/common/CommentAndCount.tsx",
+      "components/common/CustomButton.tsx",
+      "components/common/CustomTextInput.tsx",
+      "components/common/FeedPhoto.tsx",
+      "components/common/GenuinityAndCount.tsx",
+      "components/common/GloriesModal.tsx",
+      "components/common/Header.tsx",
+      "components/common/ImageUploader.tsx",
+      "components/common/OptionSelector.tsx",
+      "components/common/PhotoAndUserName.tsx",
+      "components/common/PhotoDetailsHeader.tsx",
+      "components/common/PhotoFeedItem.tsx",
+      "components/common/PhotoGrid.tsx",
+      "components/common/PinchZoomImage.tsx",
+      "components/common/ProfileStats.tsx",
+      "components/common/Separator.tsx",
+      "components/common/Skeleton.tsx"
+    ],
+    "types": [
+      "code"
+    ]
+  },
+  {
+    "chunk_num": 4,
+    "total_chunks": 35,
+    "files": [
+      "API_DOCUMENTATION.md",
+      "API_FRAMEWORK_DOCS.md",
+      "README.md",
+      "app.config.ts",
+      "babel.config.js",
+      "eslint.config.js",
+      "expo-env.d.ts",
+      "metro.config.js",
+      "nativewind-env.d.ts",
+      "tailwind.config.js",
+      "hooks/index.ts",
+      "hooks/useAuth.ts",
+      "hooks/useChallenges.ts",
+      "hooks/useColorScheme.ts",
+      "hooks/useColorScheme.web.ts",
+      "hooks/useFeed.ts",
+      "hooks/useInvites.ts",
+      "hooks/useMedia.ts",
+      "hooks/useThemeColor.ts",
+      "hooks/useUsers.ts"
+    ],
+    "types": [
+      "code",
+      "document"
+    ]
+  },
+  {
+    "chunk_num": 5,
+    "total_chunks": 35,
+    "files": [
+      "services/apiClient.ts",
+      "services/authService.ts",
+      "services/challengeService.ts",
+      "services/feedService.ts",
+      "services/googleAuthService.ts",
+      "services/index.ts",
+      "services/inviteService.ts",
+      "services/mediaService.ts",
+      "services/mockGoogleAuthService.ts",
+      "services/userService.ts",
+      "screens/About.tsx",
+      "screens/EditProfile.tsx",
+      "screens/Feed.tsx",
+      "screens/HelpCenter.tsx",
+      "screens/PrivacySecurity.tsx",
+      "screens/Profile.tsx",
+      "screens/Settings.tsx"
+    ],
+    "types": [
+      "code"
+    ]
+  },
+  {
+    "chunk_num": 6,
+    "total_chunks": 35,
+    "files": [
+      "app/(tabs)/_layout.tsx",
+      "app/(tabs)/challenges.tsx",
+      "app/(tabs)/create.tsx",
+      "app/(tabs)/global.tsx",
+      "app/(tabs)/index.tsx",
+      "app/(tabs)/profile.tsx",
+      "components/Collapsible.tsx",
+      "components/ExternalLink.tsx",
+      "components/HapticTab.tsx",
+      "components/ParallaxScrollView.tsx",
+      "components/ThemedText.tsx",
+      "components/ThemedView.tsx",
+      "docs/API_SETUP.md",
+      "docs/AUTHENTICATION_SETUP.md",
+      "docs/CODEBASE_GUIDE.md",
+      "docs/GOOGLE_AUTH_TESTING.md",
+      "utils/challengePhotos.ts",
+      "utils/haptics.ts",
+      "utils/motivationalMessages.ts",
+      "utils/photoNavigation.ts"
+    ],
+    "types": [
+      "code",
+      "document"
+    ]
+  },
+  {
+    "chunk_num": 7,
+    "total_chunks": 35,
+    "files": [
+      "constants/Colors.ts",
+      "constants/icons.ts",
+      "constants/images.ts",
+      "components/ui/IconSymbol.tsx",
+      "components/ui/TabBarBackground.tsx",
+      "ios/ChallengeSphere/AppDelegate.swift",
+      "ios/ChallengeSphere/ChallengeSphere-Bridging-Header.h",
+      "providers/AuthProvider.tsx",
+      "providers/QueryProvider.tsx",
+      "screens/auth/LoginScreen.tsx",
+      "screens/auth/SignUpScreen.tsx",
+      "types/api.ts",
+      "types/images.d.ts",
+      "scripts/reset-project.js"
+    ],
+    "types": [
+      "code"
+    ]
+  },
+  {
+    "chunk_num": 8,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/arrow.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 9,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/globe copy.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 10,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/globe.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 11,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/glory-outline.svg"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 12,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/glory.svg"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 13,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/home.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 14,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/logo.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 15,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/person.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 16,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/play.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 17,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/plus.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 18,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/save.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 19,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/search.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 20,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/settings.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 21,
+    "total_chunks": 35,
+    "files": [
+      "assets/icons/star.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 22,
+    "total_chunks": 35,
+    "files": [
+      "assets/images/bg.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 23,
+    "total_chunks": 35,
+    "files": [
+      "assets/images/challengesphere.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 24,
+    "total_chunks": 35,
+    "files": [
+      "assets/images/genericman.jpg"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 25,
+    "total_chunks": 35,
+    "files": [
+      "assets/images/highlight.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 26,
+    "total_chunks": 35,
+    "files": [
+      "assets/images/logo.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 27,
+    "total_chunks": 35,
+    "files": [
+      "assets/images/rankingGradient.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 28,
+    "total_chunks": 35,
+    "files": [
+      "assets/images/user-female-1.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 29,
+    "total_chunks": 35,
+    "files": [
+      "assets/images/user-male-1.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 30,
+    "total_chunks": 35,
+    "files": [
+      "assets/images/user-male-2.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 31,
+    "total_chunks": 35,
+    "files": [
+      "assets/images/user-male-3.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 32,
+    "total_chunks": 35,
+    "files": [
+      "ios/ChallengeSphere/Images.xcassets/AppIcon.appiconset/App-Icon-1024x1024@1x.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 33,
+    "total_chunks": 35,
+    "files": [
+      "ios/ChallengeSphere/Images.xcassets/SplashScreenLogo.imageset/image.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 34,
+    "total_chunks": 35,
+    "files": [
+      "ios/ChallengeSphere/Images.xcassets/SplashScreenLogo.imageset/image@2x.png"
+    ],
+    "types": [
+      "image"
+    ]
+  },
+  {
+    "chunk_num": 35,
+    "total_chunks": 35,
+    "files": [
+      "ios/ChallengeSphere/Images.xcassets/SplashScreenLogo.imageset/image@3x.png"
+    ],
+    "types": [
+      "image"
+    ]
+  }
+]

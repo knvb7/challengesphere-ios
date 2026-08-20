@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "Bash(npx tsc:*)",
+      "Bash(curl -s \"http://localhost:8080/api/v1/leaderboard/challenge/1?type=OVERALL&limit=5\")",
+      "Bash(curl -s \"http://localhost:8080/api/v1/challenges/my?userId=1&status=active\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\([{'id':c.get\\('challengeId'\\),'title':c.get\\('title'\\)} for c in d.get\\('challenges',[]\\)][:5], indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('challenges',[]\\)[0] if d.get\\('challenges'\\) else {}, indent=2\\)\\)\")",
+      "Bash(curl -s \"http://localhost:8080/api/v1/leaderboard/challenge/2?type=OVERALL&limit=5\")",
+      "Bash(python3 -c \"import json,sys; print\\(json.dumps\\(json.load\\(sys.stdin\\), indent=2\\)\\)\")",
+      "Bash(curl -s \"http://localhost:8080/api/v1/submissions/user/1/challenge/2\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('total:', d.get\\('totalElements',0\\)\\); entries=d.get\\('content',d.get\\('submissions',[]\\)\\); print\\('first:', json.dumps\\(entries[0] if entries else {}, indent=2\\)\\)\")",
+      "Bash(curl -s \"http://localhost:8080/api/v1/leaderboard/challenge/2/update\" -X POST)",
+      "Bash(curl -s \"http://localhost:8080/api/v1/leaderboard/challenge/2/recalculate\" -X POST)",
+      "Bash(curl -s \"http://localhost:8080/v3/api-docs\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); paths=[p for p in d.get\\('paths',{}\\) if 'leaderboard' in p.lower\\(\\)]; print\\('\\\\n'.join\\(sorted\\(paths\\)\\)\\)\")",
+      "Bash(curl -s \"http://localhost:8080/swagger-ui/index.html\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\({k:v for k,v in d.items\\(\\) if k!='content' and k!='submissions'}, indent=2\\)\\); subs=d.get\\('content',d.get\\('submissions',[]\\)\\); print\\('submission count in list:', len\\(subs\\)\\)\")",
+      "Bash(curl -s \"http://localhost:8080/api/v1/submissions/user/1/challenge/2?page=1&pageSize=100\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('keys:', list\\(d.keys\\(\\)\\)\\); print\\('has submissions:', 'submissions' in d\\); print\\('has content:', 'content' in d\\)\")",
+      "mcp__plugin_claude-mem_mcp-search__smart_outline"
+    ]
+  }
+}

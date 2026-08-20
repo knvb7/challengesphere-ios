@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f1ff" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Challenge invitation · ChallengeSphere</title>
+    <style>
+      :root { color-scheme: light; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100vh; color: #22152f; background: radial-gradient(circle at 50% 0%, #e4d1ff 0, #f6f1ff 38%, #fdfcff 100%); display: grid; place-items: center; padding: 24px; }
+      main { width: min(100%, 460px); border: 1px solid rgba(74, 42, 101, .13); border-radius: 30px; background: rgba(255, 255, 255, .9); padding: 34px 26px; box-shadow: 0 28px 80px rgba(76, 31, 138, .14); text-align: center; backdrop-filter: blur(16px); }
+      .mark { width: 66px; height: 66px; margin: 0 auto 20px; border-radius: 20px; display: grid; place-items: center; color: white; background: linear-gradient(135deg, #7137f5, #5320c9); box-shadow: 0 14px 30px rgba(113, 55, 245, .25); font-size: 25px; font-weight: 800; }
+      .eyebrow { color: #7137f5; text-transform: uppercase; letter-spacing: .13em; font-size: 12px; font-weight: 800; }
+      h1 { margin: 10px 0 10px; font-size: clamp(28px, 8vw, 38px); line-height: 1.08; letter-spacing: -.035em; }
+      p { margin: 0 auto; max-width: 34ch; color: #786b84; font-size: 15px; line-height: 1.6; }
+      .challenge { margin: 24px 0; padding: 18px; border: 1px solid rgba(74, 42, 101, .13); border-radius: 18px; background: #f9f6ff; text-align: left; }
+      .challenge small { display: block; color: #786b84; margin-bottom: 6px; }
+      .challenge strong { font-size: 17px; }
+      .challenge-copy { max-width: none; margin: 10px 0 0; font-size: 14px; color: #564765; }
+      .category { margin-top: 12px; color: #7137f5; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+      .meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 16px; }
+      .meta-item { min-width: 0; padding: 11px 6px; border-radius: 12px; background: white; border: 1px solid rgba(74, 42, 101, .1); text-align: center; }
+      .meta-item span { display: block; color: #786b84; font-size: 10px; line-height: 1.25; }
+      .meta-item b { display: block; margin-top: 4px; color: #22152f; font-size: 13px; }
+      .schedule { margin-top: 13px; padding-top: 13px; border-top: 1px solid rgba(74, 42, 101, .13); color: #3c8f55; font-size: 13px; }
+      .preview-section { margin: 0 0 12px; padding: 16px; border: 1px solid rgba(74, 42, 101, .13); border-radius: 15px; background: #f9f6ff; text-align: left; }
+      .preview-section h2 { margin: 0 0 8px; color: #22152f; font-size: 14px; }
+      .preview-section p { max-width: none; color: #564765; font-size: 13px; white-space: pre-line; }
+      .privacy-note { color: #786b84; font-size: 12px; }
+      .actions { display: grid; gap: 11px; margin-top: 22px; }
+      a, button { min-height: 50px; border-radius: 14px; border: 0; display: flex; align-items: center; justify-content: center; padding: 0 18px; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+      button { color: white; background: linear-gradient(135deg, #7137f5, #5320c9); box-shadow: 0 12px 26px rgba(113, 55, 245, .22); }
+      a { color: #564765; background: white; border: 1px solid rgba(74, 42, 101, .13); }
+      .android-note { margin-top: 18px; color: #564765; font-size: 12px; }
+      .stores { display: grid; grid-template-columns: 1fr; gap: 10px; }
+      .stores a:first-child { color: white; background: linear-gradient(135deg, #7137f5, #5320c9); box-shadow: 0 12px 26px rgba(113, 55, 245, .18); }
+      .iphone-link { margin-top: 10px; min-height: 44px; font-size: 13px; }
+      .error { color: #b72d4a; }
+      [hidden] { display: none !important; }
+      footer { margin-top: 22px; color: #786b84; font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="mark" aria-hidden="true">CS</div>
+      <div class="eyebrow">Private challenge invite</div>
+      <h1>Show up together.</h1>
+      <p id="intro">A friend invited you to join their ChallengeSphere challenge.</p>
+      <div class="challenge">
+        <small id="challenge-label">Invitation</small>
+        <strong id="challenge-title">ChallengeSphere challenge</strong>
+        <p class="challenge-copy" id="challenge-description">Loading the challenge details…</p>
+        <div class="category" id="challenge-category" hidden></div>
+        <div class="meta" aria-label="Challenge invitation activity">
+          <div class="meta-item"><span>Commitment</span><b id="duration">—</b></div>
+          <div class="meta-item"><span>In challenge</span><b id="participants">—</b></div>
+          <div class="meta-item"><span>Joined by link</span><b id="accepted">—</b></div>
+          <div class="meta-item"><span>Submission format</span><b id="submission-format">Flexible</b></div>
+        </div>
+        <div class="schedule" id="schedule" hidden></div>
+      </div>
+      <section class="preview-section" id="rules-section" hidden>
+        <h2>Rules</h2>
+        <p id="rules"></p>
+      </section>
+      <section class="preview-section" id="benefits-section" hidden>
+        <h2>Why join</h2>
+        <p id="benefits"></p>
+      </section>
+      <p class="privacy-note">Shared links never reveal who has not joined.</p>
+      <div class="actions">
+        <button id="open-app" type="button">Open in ChallengeSphere</button>
+        <p class="android-note">New on Android? Complete both steps using the same Google account.</p>
+        <div class="stores">
+          <a id="android-tester-link" href="https://play.google.com/apps/testing/com.challengesphere.app" target="_blank" rel="noopener noreferrer">1. Become an Android tester</a>
+          <a id="android-install-link" href="https://play.google.com/store/apps/details?id=com.challengesphere.app" target="_blank" rel="noopener noreferrer" aria-disabled="true" tabindex="-1" style="pointer-events:none;opacity:.48">2. Complete step 1 first</a>
+        </div>
+        <a class="iphone-link" href="https://apps.apple.com/app/challengesphere">Download for iPhone</a>
+      </div>
+      <footer>Invite links are private. Only share them with people you trust.</footer>
+    </main>
+    <script>
+      (() => {
+        const match = window.location.pathname.match(/^\/invite\/([A-Za-z0-9]{8,12})\/?$/);
+        const inviteCode = match ? match[1] : '';
+        const button = document.getElementById('open-app');
+        const intro = document.getElementById('intro');
+        const title = document.getElementById('challenge-title');
+        const label = document.getElementById('challenge-label');
+        const description = document.getElementById('challenge-description');
+        const category = document.getElementById('challenge-category');
+        const duration = document.getElementById('duration');
+        const participants = document.getElementById('participants');
+        const accepted = document.getElementById('accepted');
+        const submissionFormat = document.getElementById('submission-format');
+        const schedule = document.getElementById('schedule');
+        const rulesSection = document.getElementById('rules-section');
+        const rules = document.getElementById('rules');
+        const benefitsSection = document.getElementById('benefits-section');
+        const benefits = document.getElementById('benefits');
+        const testerLink = document.getElementById('android-tester-link');
+        const installLink = document.getElementById('android-install-link');
+        const betaAccessStorageKey = 'challengesphere_android_beta_opt_in_started';
+
+        const unlockAndroidInstall = () => {
+          installLink.textContent = '2. Install from Google Play';
+          installLink.style.pointerEvents = '';
+          installLink.style.opacity = '';
+          installLink.removeAttribute('aria-disabled');
+          installLink.removeAttribute('tabindex');
+        };
+
+        try {
+          if (window.localStorage.getItem(betaAccessStorageKey) === '1') unlockAndroidInstall();
+        } catch (error) {
+          // Storage may be unavailable; clicking step 1 still unlocks this visit.
+        }
+
+        testerLink.addEventListener('click', () => {
+          try {
+            window.localStorage.setItem(betaAccessStorageKey, '1');
+          } catch (error) {
+            // Continue without persistence.
+          }
+          window.setTimeout(unlockAndroidInstall, 250);
+        });
+
+        if (!inviteCode) {
+          intro.textContent = 'This invitation link is incomplete or invalid.';
+          intro.className = 'error';
+          button.disabled = true;
+          button.style.opacity = '.5';
+          return;
+        }
+
+        label.textContent = `Invite code · ${inviteCode}`;
+        button.addEventListener('click', () => {
+          window.location.href = `challengesphere://invite/${encodeURIComponent(inviteCode)}`;
+        });
+
+        const apiBase = 'https://pqea9mim4b.execute-api.ap-south-1.amazonaws.com/api/v1';
+        fetch(`${apiBase}/invites/${encodeURIComponent(inviteCode)}`, { credentials: 'omit' })
+          .then((response) => response.ok ? response.json() : Promise.reject(new Error('unavailable')))
+          .then((invite) => {
+            if (!invite) return;
+
+            if (invite.challengeTitle) {
+              title.textContent = invite.challengeTitle;
+              document.title = `${invite.challengeTitle} · ChallengeSphere`;
+            }
+
+            const inviter = invite.inviterName
+              || (invite.inviterUsername ? `@${invite.inviterUsername}` : 'A friend');
+            intro.textContent = `${inviter} invited you to show up together.`;
+            description.textContent = invite.challengeDescription || 'Open the invitation to see the challenge and join the group.';
+
+            if (invite.challengeCategories) {
+              category.textContent = invite.challengeCategories.split(',').join(' · ');
+              category.hidden = false;
+            }
+
+            duration.textContent = invite.challengeMode === 'ONE_OFF'
+              ? 'One check-in'
+              : invite.challengeDurationDays
+                ? `${invite.challengeDurationDays} day${invite.challengeDurationDays === 1 ? '' : 's'}`
+                : 'Daily';
+            participants.textContent = Number.isInteger(invite.participantCount) ? String(invite.participantCount) : '—';
+            accepted.textContent = Number.isInteger(invite.acceptedCount)
+              ? String(invite.acceptedCount)
+              : String(invite.useCount || 0);
+            submissionFormat.textContent = invite.proofMode === 'PHOTO_REQUIRED' ? 'Photo required' : 'Flexible';
+
+            if (invite.challengeStartDate) {
+              const start = new Date(`${invite.challengeStartDate}T00:00:00`);
+              schedule.textContent = `Starts ${start.toLocaleDateString()}`;
+              schedule.hidden = false;
+            } else if (invite.expiresAt) {
+              schedule.textContent = `Invite expires ${new Date(invite.expiresAt).toLocaleDateString()}`;
+              schedule.hidden = false;
+            }
+
+            if (invite.challengeRules) {
+              rules.textContent = invite.challengeRules;
+              rulesSection.hidden = false;
+            }
+            if (invite.challengeBenefits) {
+              benefits.textContent = invite.challengeBenefits;
+              benefitsSection.hidden = false;
+            }
+          })
+          .catch(() => {
+            title.textContent = 'ChallengeSphere challenge';
+            description.textContent = 'The preview is temporarily unavailable. You can still open the invitation in ChallengeSphere.';
+          });
+      })();
+    </script>
+  </body>
+</html>

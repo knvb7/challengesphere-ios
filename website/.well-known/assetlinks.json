@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.challengesphere.app",
+      "sha256_cert_fingerprints": [
+        "4D:E7:9F:77:E9:AE:35:5A:66:91:6B:6E:63:09:F9:86:E2:5A:30:EF:EF:A0:18:AB:21:1A:52:44:E0:B4:C4:74"
+      ]
+    }
+  }
+]

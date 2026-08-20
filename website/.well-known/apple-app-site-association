@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "9CZSSGNN55.com.ironside.challengesphere",
+        "paths": [
+          "/invite/*"
+        ]
+      }
+    ]
+  }
+}

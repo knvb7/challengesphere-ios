@@ -1,0 +1,57 @@
+{
+    "cli": {
+        "version": ">= 10.0.0"
+    },
+    "build": {
+        "preview": {
+            "android": {
+                "buildType": "apk"
+            },
+            "env": {
+                "EXPO_PUBLIC_API_BASE_URL": "https://pqea9mim4b.execute-api.ap-south-1.amazonaws.com/api/v1"
+            }
+        },
+        "production": {
+            "android": {
+                "buildType": "app-bundle"
+            },
+            "env": {
+                "CHALLENGESPHERE_BUILD_PLATFORM": "android",
+                "EXPO_PUBLIC_API_BASE_URL": "https://pqea9mim4b.execute-api.ap-south-1.amazonaws.com/api/v1",
+                "ADMOB_ANDROID_APP_ID": "ca-app-pub-2449482115941448~2805773062",
+                "EXPO_PUBLIC_ADMOB_FEED_NATIVE_AD_UNIT_ID_ANDROID": "ca-app-pub-2449482115941448/7066396363",
+                "EXPO_PUBLIC_ADMOB_EXPLORE_NATIVE_AD_UNIT_ID_ANDROID": "ca-app-pub-2449482115941448/2697961851"
+            }
+        },
+        "production-ios-no-ads": {
+            "ios": {},
+            "env": {
+                "CHALLENGESPHERE_BUILD_PLATFORM": "ios",
+                "EXPO_PUBLIC_IOS_ADS_ENABLED": "false",
+                "EXPO_PUBLIC_API_BASE_URL": "https://pqea9mim4b.execute-api.ap-south-1.amazonaws.com/api/v1"
+            }
+        },
+        "production-ios-ads": {
+            "ios": {},
+            "env": {
+                "CHALLENGESPHERE_BUILD_PLATFORM": "ios",
+                "EXPO_PUBLIC_IOS_ADS_ENABLED": "true",
+                "EXPO_PUBLIC_API_BASE_URL": "https://pqea9mim4b.execute-api.ap-south-1.amazonaws.com/api/v1",
+                "ADMOB_IOS_APP_ID": "ca-app-pub-2449482115941448~3550657330",
+                "EXPO_PUBLIC_ADMOB_EXPLORE_NATIVE_AD_UNIT_ID_IOS": "ca-app-pub-2449482115941448/7330120246",
+                "EXPO_PUBLIC_ADMOB_FEED_NATIVE_AD_UNIT_ID_IOS": "ca-app-pub-2449482115941448/1546476379"
+            }
+        }
+    },
+    "submit": {
+        "production": {
+            "ios": {}
+        },
+        "alpha": {
+            "android": {
+                "track": "alpha",
+                "releaseStatus": "completed"
+            }
+        }
+    }
+}

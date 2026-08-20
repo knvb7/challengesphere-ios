@@ -1,0 +1,95 @@
+{
+  "expo": {
+    "name": "ChallengeSphere",
+    "slug": "challengesphere",
+    "version": "1.0.12",
+    "orientation": "portrait",
+    "icon": "./assets/images/challengesphere.png",
+    "scheme": [
+      "challengesphere",
+      "myapp"
+    ],
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ironside.challengesphere",
+      "buildNumber": "6",
+      "usesAppleSignIn": true,
+      "associatedDomains": [
+        "applinks:challengesphere.com"
+      ],
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.challengesphere.app",
+      "versionCode": 16,
+      "softwareKeyboardLayoutMode": "resize",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "allowBackup": false
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/logo.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/logo-mark-clean.png",
+          "imageWidth": 220,
+          "resizeMode": "contain",
+          "backgroundColor": "#FFFFFF",
+          "android": {
+            "backgroundColor": "#FFFFFF",
+            "drawable": {
+              "icon": "./assets/splashscreen-transparent.xml"
+            }
+          }
+        }
+      ],
+      "expo-sqlite",
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/notification-icon.png",
+          "color": "#4700EC",
+          "defaultChannel": "default"
+        }
+      ],
+      "expo-web-browser",
+      "expo-apple-authentication",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "ChallengeSphere uses your photo library so you can choose challenge submissions, profile photos, and support screenshots.",
+          "cameraPermission": "ChallengeSphere uses the camera so you can take challenge submissions and profile photos.",
+          "microphonePermission": false
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "edea3f91-54ce-4834-907e-d8e8fbc763b6"
+      }
+    },
+    "owner": "mihirdalal007"
+  }
+}

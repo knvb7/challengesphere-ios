@@ -1,0 +1,13 @@
+1. When challenge is completed do not give option to update it
+2.⁠ ⁠When submission is done, still it is saying to upload the submission. This happens when we do not upload through the upload button given in the my challenges page top violet coloured capsule
+4.⁠ ⁠My profile challenges is redirecting to the profile page and not to the challenge. Need to fix that
+6.⁠ ⁠All submissions for all users must be shown in global submissions and then give an option to filter 
+7.⁠ ⁠Remove genuininty score for now
+8.⁠ ⁠If the challenge is expired , do not let user join it. Remove it from global challenges and move it to completed challenges
+9.⁠ ⁠Past challenges in my challenges top(the small sized tab) must be in seperate tab. Also, remove the joined tab, also, the count of challenges in each tab must be shown. Also, gives filters to filter it category wise (like Fitness, Study etc)
+
+11.⁠ ⁠[DONE] Show mandatory field warnings during challenge creation if a user tries to proceed without submitting mandatory fields
+12.⁠ ⁠[DONE] Merge the settings currently lot of different bifurcations are there
+13.⁠ ⁠[DONE] There must be an option to invite friends easily in the challenge details page
+14.⁠ ⁠Remove the delte submission feature for now
+15.⁠ ⁠⁠UI should be in the safe area view for glories
