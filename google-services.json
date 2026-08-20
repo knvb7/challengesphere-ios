@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "881631351098",
+    "project_id": "challengesphere-3a924",
+    "storage_bucket": "challengesphere-3a924.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:881631351098:android:f5db58d2b506103cb44003",
+        "android_client_info": {
+          "package_name": "com.challengesphere.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuxUQr9Ah5mTKwIdxW0GWaJLk6p3uiBPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,40 @@
+# dependencies
+node_modules/
+.git/
+**/.git/
+
+# Expo/local build output
+.expo/
+dist/
+web-build/
+build/
+output/
+android/**/build/
+android/**/.cxx/
+android/**/.gradle/
+android/app/build/
+android/.gradle/
+*.apk
+*.aab
+*.ipa
+expo-env.d.ts
+
+# Keep the committed iOS project in EAS uploads. Its entitlements, first-party
+# privacy manifest, and release-specific native configuration are authoritative.
+
+# local/generated files
+.DS_Store
+*.tsbuildinfo
+key.json
+api-spec.json
+graphify-out/
+.claude/
+.codex/
+.superpowers/
+.vscode/
+docs/
+website/
+tmp/
+store-assets/
+API_DOCUMENTATION.md
+API_FRAMEWORK_DOCS.md

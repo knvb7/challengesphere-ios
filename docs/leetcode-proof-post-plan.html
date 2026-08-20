@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChallengeSphere LeetCode Proof Post Plan</title>
+  <style>
+    :root {
+      --bg: #060807;
+      --surface: #101311;
+      --surface-2: #171b18;
+      --surface-3: #20261f;
+      --line: #2b342c;
+      --line-strong: #435042;
+      --text: #f3f7ef;
+      --muted: #a4afa2;
+      --soft: #d7e3d3;
+      --green: #7dff9a;
+      --green-2: #22c55e;
+      --amber: #ffbf5f;
+      --blue: #80c7ff;
+      --red: #ff7979;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      --radius: 8px;
+      --phone-radius: 28px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(13, 19, 15, 0.95) 0%, rgba(6, 8, 7, 1) 38%),
+        var(--bg);
+      color: var(--text);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page-shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 52px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0 26px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(125, 255, 154, 0.25);
+      background: #121612;
+      object-fit: contain;
+      padding: 5px;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 750;
+      color: var(--text);
+    }
+
+    .brand-subtitle {
+      margin: 2px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .top-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(125, 255, 154, 0.28);
+      background: rgba(20, 39, 25, 0.72);
+      color: #d8ffdf;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.78fr);
+      gap: 34px;
+      align-items: center;
+      padding: 36px 0 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255, 191, 95, 0.12);
+      color: #ffe0ac;
+      border: 1px solid rgba(255, 191, 95, 0.22);
+      font-size: 12px;
+      font-weight: 750;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow-dot,
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(125, 255, 154, 0.12);
+      flex: 0 0 auto;
+    }
+
+    .hero h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.95;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .hero-copy {
+      margin: 22px 0 0;
+      max-width: 680px;
+      color: var(--soft);
+      font-size: 17px;
+      line-height: 1.62;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .action-chip {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 15px;
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .action-chip.primary {
+      background: var(--green-2);
+      border-color: var(--green-2);
+      color: #06140b;
+    }
+
+    .hero-panel {
+      border: 1px solid rgba(125, 255, 154, 0.18);
+      background: rgba(16, 19, 17, 0.86);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .mini-flow {
+      display: grid;
+      gap: 10px;
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #111511;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: #1d2d20;
+      border: 1px solid #315c36;
+      color: var(--green);
+      font-weight: 850;
+    }
+
+    .flow-step h3 {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .flow-step p {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(25px, 3vw, 38px);
+      line-height: 1.05;
+      font-weight: 820;
+      letter-spacing: 0;
+    }
+
+    .section-note {
+      max-width: 470px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .mockup-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .phone {
+      width: min(100%, 390px);
+      margin: 0 auto;
+      border-radius: var(--phone-radius);
+      border: 1px solid #2b332c;
+      background: #050605;
+      padding: 12px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 18px;
+    }
+
+    .phone-screen {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid #1d241f;
+      background: #080a09;
+      min-height: 760px;
+    }
+
+    .mobile-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 15px 13px;
+      background: #111412;
+      border-bottom: 1px solid #202821;
+    }
+
+    .mobile-header strong {
+      font-size: 15px;
+    }
+
+    .icon-button {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: #1a201b;
+      border: 1px solid #2a352c;
+      color: #dce9d9;
+      font-weight: 800;
+    }
+
+    .post {
+      margin: 12px;
+      border: 1px solid #222b24;
+      border-radius: 14px;
+      background: #101310;
+      overflow: hidden;
+    }
+
+    .post-user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+    }
+
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #364037;
+    }
+
+    .post-user strong,
+    .post-user span {
+      display: block;
+    }
+
+    .post-user strong {
+      font-size: 14px;
+    }
+
+    .post-user span {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .proof-card {
+      margin: 0 12px 12px;
+      border-radius: 14px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(128, 199, 255, 0.08) 46%, rgba(255, 191, 95, 0.1)),
+        #0c100d;
+      border: 1px solid #2f4534;
+    }
+
+    .proof-top {
+      padding: 15px;
+      border-bottom: 1px solid rgba(215, 227, 211, 0.1);
+    }
+
+    .proof-kicker {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .lc-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(255, 191, 95, 0.16);
+      color: #ffe2b4;
+      border: 1px solid rgba(255, 191, 95, 0.25);
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .lc-mark {
+      width: 18px;
+      height: 18px;
+      border-radius: 6px;
+      background: #f6b84b;
+      color: #15100a;
+      display: grid;
+      place-items: center;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #d8ffdf;
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .proof-title {
+      margin: 0;
+      font-size: 23px;
+      line-height: 1.12;
+      font-weight: 860;
+      letter-spacing: 0;
+    }
+
+    .proof-meta {
+      margin: 8px 0 0;
+      color: #c1d1bd;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .stat {
+      min-width: 0;
+      border-radius: 10px;
+      padding: 10px 8px;
+      background: rgba(5, 7, 6, 0.58);
+      border: 1px solid rgba(215, 227, 211, 0.1);
+      text-align: center;
+    }
+
+    .stat b {
+      display: block;
+      font-size: 20px;
+      line-height: 1;
+      color: #ffffff;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .problems {
+      padding: 10px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .problem-row {
+      display: grid;
+      grid-template-columns: 32px 1fr auto;
+      gap: 9px;
+      align-items: center;
+      border-radius: 12px;
+      background: rgba(6, 8, 7, 0.7);
+      border: 1px solid rgba(215, 227, 211, 0.1);
+      padding: 9px;
+      min-width: 0;
+    }
+
+    .problem-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: rgba(125, 255, 154, 0.12);
+      color: var(--green);
+      border: 1px solid rgba(125, 255, 154, 0.2);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .problem-row.attempted .problem-icon {
+      background: rgba(255, 191, 95, 0.13);
+      color: var(--amber);
+      border-color: rgba(255, 191, 95, 0.24);
+    }
+
+    .problem-name {
+      min-width: 0;
+    }
+
+    .problem-name strong {
+      display: block;
+      color: var(--text);
+      font-size: 13px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .problem-name span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .status {
+      padding: 6px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 850;
+      border: 1px solid rgba(125, 255, 154, 0.25);
+      color: #d8ffdf;
+      background: rgba(34, 197, 94, 0.16);
+      white-space: nowrap;
+    }
+
+    .attempted .status {
+      border-color: rgba(255, 191, 95, 0.28);
+      color: #ffe0ac;
+      background: rgba(255, 191, 95, 0.14);
+    }
+
+    .post-caption {
+      padding: 0 14px 12px;
+      color: var(--soft);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .post-caption b {
+      color: #fff;
+    }
+
+    .post-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #202720;
+      padding: 10px 12px;
+    }
+
+    .action {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--soft);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .action-symbol {
+      width: 25px;
+      height: 25px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #344035;
+      background: #141915;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .plan-panel {
+      display: grid;
+      gap: 14px;
+    }
+
+    .plan-card {
+      border-radius: 14px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 18px;
+    }
+
+    .plan-card h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .plan-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 10px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 10px;
+      color: var(--soft);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .check {
+      width: 24px;
+      height: 24px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(125, 255, 154, 0.11);
+      border: 1px solid rgba(125, 255, 154, 0.22);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .architecture {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .arch-node {
+      border-radius: 14px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 16px;
+      min-height: 142px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .arch-node::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 3px;
+      background: var(--green-2);
+    }
+
+    .arch-node:nth-child(2)::before {
+      background: var(--amber);
+    }
+
+    .arch-node:nth-child(3)::before {
+      background: var(--blue);
+    }
+
+    .arch-node:nth-child(4)::before {
+      background: var(--red);
+    }
+
+    .arch-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .arch-node h3 {
+      margin: 8px 0 8px;
+      font-size: 16px;
+    }
+
+    .arch-node p {
+      margin: 0;
+      color: var(--soft);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .code-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    pre {
+      margin: 0;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #090c0a;
+      color: #d7e3d3;
+      padding: 16px;
+      overflow: auto;
+      font-size: 12px;
+      line-height: 1.58;
+    }
+
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .timeline-item {
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      padding: 16px;
+    }
+
+    .timeline-item strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .timeline-item span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .footer {
+      margin-top: 30px;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 940px) {
+      .hero,
+      .mockup-grid,
+      .code-wrap,
+      .architecture,
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .phone {
+        position: static;
+      }
+
+      .section-header {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page-shell {
+        width: min(100% - 20px, 1180px);
+        padding-top: 14px;
+      }
+
+      .topbar {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 16px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .phone-screen {
+        min-height: auto;
+      }
+
+      .problem-row {
+        grid-template-columns: 30px 1fr;
+      }
+
+      .status {
+        grid-column: 2;
+        justify-self: start;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <div class="brand">
+        <img class="brand-logo" src="../assets/images/logo.png" alt="ChallengeSphere logo" />
+        <div>
+          <p class="brand-title">ChallengeSphere</p>
+          <p class="brand-subtitle">LeetCode proof post implementation preview</p>
+        </div>
+      </div>
+      <div class="top-pill"><span class="status-dot"></span>Visible to other users after posting</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-dot"></span>New coding challenge proof format</div>
+        <h1>Turn LeetCode activity into a <span>beautiful daily post.</span></h1>
+        <p class="hero-copy">
+          For coding challenges, the post should show what the user solved or attempted on LeetCode for that specific challenge day. The proof is stored with the submission, so followers and challenge participants see the same polished evidence in their feed.
+        </p>
+        <div class="hero-actions">
+          <div class="action-chip primary">Create proof post</div>
+          <div class="action-chip">Persist proof payload</div>
+          <div class="action-chip">Render in feed</div>
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="Implementation flow">
+        <div class="mini-flow">
+          <div class="flow-step">
+            <div class="step-num">1</div>
+            <div>
+              <h3>Sync LeetCode</h3>
+              <p>Fetch public LeetCode activity for the connected username.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">2</div>
+            <div>
+              <h3>Filter by challenge day</h3>
+              <p>Keep only problems solved or attempted on that day.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">3</div>
+            <div>
+              <h3>Save as submission proof</h3>
+              <p>Store structured proof data with the backend submission.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="step-num">4</div>
+            <div>
+              <h3>Render as a proof post</h3>
+              <p>Use a special LeetCode card inside feed and submissions.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Post Mockup</h2>
+        <p class="section-note">This is the target visual style: not a screenshot, but a feed-ready proof card that replaces the normal photo area for LeetCode proof submissions.</p>
+      </div>
+
+      <div class="mockup-grid">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="mobile-header">
+              <div class="icon-button">‹</div>
+              <strong>Challenge Feed</strong>
+              <div class="icon-button">...</div>
+            </div>
+
+            <article class="post">
+              <div class="post-user">
+                <img class="avatar" src="../assets/images/user-male-2.png" alt="User avatar" />
+                <div>
+                  <strong>Mihir Dalal</strong>
+                  <span>Day 7 · Daily DSA Grind</span>
+                </div>
+              </div>
+
+              <div class="proof-card">
+                <div class="proof-top">
+                  <div class="proof-kicker">
+                    <div class="lc-chip"><span class="lc-mark">LC</span> LeetCode proof</div>
+                    <div class="verified"><span class="status-dot"></span>Synced</div>
+                  </div>
+                  <h2 class="proof-title">Solved 3 problems today</h2>
+                  <p class="proof-meta">@mihir_codes · June 21, 2026 · Public LeetCode activity</p>
+                  <div class="stats">
+                    <div class="stat">
+                      <b>3</b>
+                      <span>Solved</span>
+                    </div>
+                    <div class="stat">
+                      <b>1</b>
+                      <span>Attempted</span>
+                    </div>
+                    <div class="stat">
+                      <b>147</b>
+                      <span>Total</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="problems">
+                  <div class="problem-row">
+                    <div class="problem-icon">✓</div>
+                    <div class="problem-name">
+                      <strong>Two Sum</strong>
+                      <span>Accepted · 8:24 AM</span>
+                    </div>
+                    <div class="status">Solved</div>
+                  </div>
+                  <div class="problem-row">
+                    <div class="problem-icon">✓</div>
+                    <div class="problem-name">
+                      <strong>Longest Substring Without Repeating Characters</strong>
+                      <span>Accepted · 12:08 PM</span>
+                    </div>
+                    <div class="status">Solved</div>
+                  </div>
+                  <div class="problem-row attempted">
+                    <div class="problem-icon">!</div>
+                    <div class="problem-name">
+                      <strong>Median of Two Sorted Arrays</strong>
+                      <span>Attempted · 7:42 PM</span>
+                    </div>
+                    <div class="status">Attempted</div>
+                  </div>
+                  <div class="problem-row">
+                    <div class="problem-icon">✓</div>
+                    <div class="problem-name">
+                      <strong>Valid Parentheses</strong>
+                      <span>Accepted · 9:13 PM</span>
+                    </div>
+                    <div class="status">Solved</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="post-caption">
+                <b>Daily DSA Grind:</b> Stayed consistent today. Solved strings and stacks, then took a serious pass at a hard binary-search problem.
+              </div>
+
+              <div class="post-actions">
+                <div class="action"><span class="action-symbol">G</span> 24 genuine</div>
+                <div class="action"><span class="action-symbol">C</span> 6 comments</div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="plan-panel">
+          <div class="plan-card">
+            <h3>What changes in the app</h3>
+            <p>The upload photo area gets a new LeetCode proof mode for coding challenges. After sync, the user can preview the day’s problems and tap Create proof post.</p>
+            <ul class="check-list">
+              <li><span class="check">✓</span><span>Add LeetCode proof preview to challenge details after sync.</span></li>
+              <li><span class="check">✓</span><span>Create a reusable proof card component for feed and submission timeline.</span></li>
+              <li><span class="check">✓</span><span>Keep normal image posts untouched for non-coding challenges.</span></li>
+            </ul>
+          </div>
+
+          <div class="plan-card">
+            <h3>What changes in the backend</h3>
+            <p>Submissions need a durable proof field so other users can see the same LeetCode card after it is posted.</p>
+            <ul class="check-list">
+              <li><span class="check">✓</span><span>Add <code>proof_payload</code> JSON/text column to submissions.</span></li>
+              <li><span class="check">✓</span><span>Accept proof payload in create and reupload submission APIs.</span></li>
+              <li><span class="check">✓</span><span>Return proof payload from feed, timeline, and submission detail APIs.</span></li>
+            </ul>
+          </div>
+
+          <div class="plan-card">
+            <h3>Posting rule</h3>
+            <p>For LeetCode proof posts, media can be empty only when a valid LeetCode proof payload exists. Empty normal posts should still be blocked.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Data Flow</h2>
+        <p class="section-note">The important bit is that proof is not just local UI. It is saved with the submission and comes back anywhere submissions are rendered.</p>
+      </div>
+
+      <div class="architecture">
+        <div class="arch-node">
+          <span class="arch-label">Frontend</span>
+          <h3>Challenge details</h3>
+          <p>Sync LeetCode, filter activity by challenge day, preview found problems.</p>
+        </div>
+        <div class="arch-node">
+          <span class="arch-label">API</span>
+          <h3>Create submission</h3>
+          <p>Send caption, day number, optional media, and LeetCode proof payload.</p>
+        </div>
+        <div class="arch-node">
+          <span class="arch-label">Backend</span>
+          <h3>Persist proof</h3>
+          <p>Save JSON proof on the submission row and return it in all read models.</p>
+        </div>
+        <div class="arch-node">
+          <span class="arch-label">Feed</span>
+          <h3>Render proof card</h3>
+          <p>If proof provider is LeetCode, render this card instead of image media.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Payload Shape</h2>
+        <p class="section-note">This is the contract I would implement between frontend and backend.</p>
+      </div>
+
+      <div class="code-wrap">
+        <pre><code>{
+  "provider": "LEETCODE",
+  "username": "mihir_codes",
+  "proofDate": "2026-06-21",
+  "solvedCount": 3,
+  "attemptedCount": 1,
+  "totalSolved": 147,
+  "syncedAt": "2026-06-21T15:52:10.000Z",
+  "problems": [
+    {
+      "title": "Two Sum",
+      "titleSlug": "two-sum",
+      "problemUrl": "https://leetcode.com/problems/two-sum/",
+      "submittedAt": "2026-06-21T02:54:00.000Z",
+      "status": "SOLVED"
+    }
+  ]
+}</code></pre>
+        <pre><code>POST /api/v1/submissions
+
+{
+  "userId": 123,
+  "challengeId": 17,
+  "dayNumber": 7,
+  "description": "Stayed consistent today.",
+  "mediaUrls": [],
+  "proofPayload": { ... }
+}</code></pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Implementation Steps</h2>
+        <p class="section-note">This is the concrete order I would use so the feature lands safely without breaking existing photo submissions.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>1. Backend schema</strong>
+          <span>Add submission proof payload storage and expose it through response DTOs.</span>
+        </div>
+        <div class="timeline-item">
+          <strong>2. Frontend types</strong>
+          <span>Add LeetCode proof payload types to submission and feed models.</span>
+        </div>
+        <div class="timeline-item">
+          <strong>3. Proof composer</strong>
+          <span>Filter synced LeetCode activity by day and create a proof submission.</span>
+        </div>
+        <div class="timeline-item">
+          <strong>4. Feed renderer</strong>
+          <span>Render the special proof card wherever submissions are shown.</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      This file is a visual implementation plan only. It does not change app behavior yet. The next step is to implement the backend proof payload and the frontend proof-card renderer.
+    </footer>
+  </main>
+</body>
+</html>
