@@ -122,10 +122,12 @@ function posterOverlay(campaign, format, screen) {
   const subheadY = headlineY + headlineLine * campaign.headline.length + Math.round(format.subheadSize * 0.95);
   const subheadLine = Math.round(format.subheadSize * 1.42);
   const chipY = format.screenY - (format.platform === 'apple' ? 94 : 70);
-  // Keep the full all-caps tagline inside the pill with comfortable right padding.
-  const chipWidth = format.platform === 'apple' ? 450 : 390;
+  // The all-caps tagline renders wider than a simple character estimate in the
+  // bundled SVG font. Size both the type and container together so the final
+  // period retains visible right-side padding on every export.
+  const chipWidth = format.platform === 'apple' ? 560 : 500;
   const chipHeight = format.platform === 'apple' ? 56 : 48;
-  const chipFont = format.platform === 'apple' ? 24 : 20;
+  const chipFont = format.platform === 'apple' ? 22 : 18;
   const screenX = Math.round((format.width - screen.width) / 2);
   const shadowX = screenX - format.border;
   const shadowY = format.screenY - format.border;
