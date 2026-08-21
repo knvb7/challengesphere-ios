@@ -122,7 +122,8 @@ function posterOverlay(campaign, format, screen) {
   const subheadY = headlineY + headlineLine * campaign.headline.length + Math.round(format.subheadSize * 0.95);
   const subheadLine = Math.round(format.subheadSize * 1.42);
   const chipY = format.screenY - (format.platform === 'apple' ? 94 : 70);
-  const chipWidth = format.platform === 'apple' ? 380 : 322;
+  // Keep the full all-caps tagline inside the pill with comfortable right padding.
+  const chipWidth = format.platform === 'apple' ? 450 : 390;
   const chipHeight = format.platform === 'apple' ? 56 : 48;
   const chipFont = format.platform === 'apple' ? 24 : 20;
   const screenX = Math.round((format.width - screen.width) / 2);
