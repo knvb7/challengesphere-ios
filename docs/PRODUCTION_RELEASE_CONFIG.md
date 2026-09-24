@@ -1,6 +1,6 @@
 # ChallengeSphere iOS production configuration handoff
 
-Status: values are intentionally absent. Store secrets in Apple, EAS, AWS/SSM, and RevenueCat—not in either repository.
+Status: Apple, RevenueCat, EAS, and backend production configuration completed on 20 August 2026. Secret values remain intentionally absent from source control.
 
 ## Fixed identifiers
 
@@ -14,17 +14,25 @@ Status: values are intentionally absent. Store secrets in Apple, EAS, AWS/SSM, a
 | Associated domain | `applinks:challengesphere.com` |
 | RevenueCat entitlement | `premium` |
 | RevenueCat offering | `default` |
+| RevenueCat iOS app | `app0025709526` |
+| RevenueCat default offering ID | `ofrngc13a1c97f4` |
+| App Store subscription group | `22322809` |
+| App Store monthly subscription | `6803539749` |
+| App Store annual subscription | `6803540499` |
 | Monthly product | `com.ironside.challengesphere.premium.monthly` |
 | Annual product | `com.ironside.challengesphere.premium.annual` |
 | Backend RevenueCat user prefix | `cs_user_` |
+| Sign in with Apple Key ID | `J83R3GYC58` |
+| App Store In-App Purchase Key ID | `27XQLY5C7T` |
+| Active App Store profile | `8J29JC62FQ` |
 
 ## Apple Developer and App Store Connect
 
-- Enable Sign in with Apple on the bundle ID and make it the primary App ID.
-- Create a Sign in with Apple key, record its Key ID, and keep the downloaded `.p8` outside source control.
-- Regenerate development and App Store provisioning profiles after enabling the capability.
-- Configure the deployed server-notification endpoint:
-  `https://<production-api-host>/api/v1/auth/apple/notifications`.
+- Sign in with Apple is enabled and is the primary App ID.
+- Sign in with Apple key `J83R3GYC58` is stored outside source control and encrypted in production SSM.
+- Active App Store profile `8J29JC62FQ` includes Sign in with Apple, Associated Domains, IAP, and Push.
+- Server notifications use:
+  `https://pqea9mim4b.execute-api.ap-south-1.amazonaws.com/api/v1/auth/apple/notifications`.
 - Complete Paid Apps, banking, tax, subscription group, product localizations, prices, and review screenshots.
 - Register the outbound mail domain with Apple Private Email Relay if ChallengeSphere will email relay addresses.
 
@@ -55,7 +63,7 @@ Required for RevenueCat:
 | `REVENUECAT_WEBHOOK_AUTHORIZATION` | Dedicated high-entropy webhook authorization value |
 | `REVENUECAT_WEBHOOK_SIGNING_SECRET` | Dedicated webhook signature secret when enabled in RevenueCat |
 
-Keep the existing production JWT, database, Redis, AWS media/moderation, mail, and push settings. Deploy migrations `V48` through `V53` before allowing the iOS candidate to sign in. `V53` permanently removes legacy raw identity fields from deletion audit rows and replaces them with automatically expiring pseudonymous fingerprints.
+Keep the existing production JWT, database, Redis, AWS media/moderation, mail, and push settings. Migrations `V48`–`V51` and `V53` were applied atomically before allowing the iOS candidate to sign in. `V52` is an unrelated official-cover migration and is not part of this release gate. `V53` permanently removes legacy raw identity fields from deletion audit rows and replaces them with automatically expiring pseudonymous fingerprints.
 
 ## EAS production environment
 
@@ -68,6 +76,8 @@ Configure these in the EAS production environment rather than committing them to
 
 The production config intentionally fails the build when the RevenueCat iOS public key is missing.
 
+The EAS production environment now contains the RevenueCat iOS public SDK key. Secret RevenueCat and Apple values exist only in encrypted backend configuration.
+
 Use the selected first-release profile:
 
 - `production-ios-no-ads` **is required for version 1**. It excludes Google Mobile Ads, Google UMP, and Expo Tracking Transparency from iOS native autolinking. It ships no iOS ad placements and no ATT prompt.
@@ -77,11 +87,10 @@ The checked-in native project is the no-ads default. EAS runs `scripts/configure
 
 ## RevenueCat dashboard
 
-- Connect the iOS App Store app and credentials.
-- Import both product IDs.
-- Attach both to entitlement `premium` and offering `default`.
+- The App Store app and In-App Purchase credentials are connected and valid.
+- Both App Store products are attached to entitlement `premium` and the monthly/annual packages in offering `default`.
 - Configure the paywall with Apple-localized prices, billing periods, renewal disclosure, Terms, Privacy, and Restore.
-- Register the production webhook using the same authorization/signing values as the backend.
+- The all-app webhook sends sandbox and production events with authorization and HMAC signing. A dashboard test delivery returned HTTP 200 from production.
 - In **Project settings → General**, set production and sandbox restore behavior to **Transfer to new App User ID**. ChallengeSphere never purchases anonymously and asks for confirmation before `restorePurchases`, so a recreated account can reclaim its Apple subscription without silently sharing it between accounts.
 - Do not enable legacy **Share between App User IDs**. Do not add background `syncPurchases`; restore remains a user-initiated action.
 - Keep `TRANSFER` enabled for the webhook integration. The backend reconciles every ChallengeSphere ID in both `transferred_from` and `transferred_to`, removing stale Premium access from the source while granting the destination from RevenueCat's authoritative entitlement state.

@@ -14,9 +14,15 @@ android/**/.cxx/
 android/**/.gradle/
 android/app/build/
 android/.gradle/
+ios/Pods/
+ios/build/
+build-artifacts/
+releases/
 *.apk
 *.aab
 *.ipa
+*.xcarchive/
+*.dSYM/
 expo-env.d.ts
 
 # Keep the committed iOS project in EAS uploads. Its entitlements, first-party
